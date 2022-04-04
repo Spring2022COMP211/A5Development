@@ -4,6 +4,7 @@
 
 typedef struct MainMem {
     uint32_t address_width;
+    uint32_t *memory;
 } MainMem;
 
 // Enumerated results for functions that return MainMemResult
