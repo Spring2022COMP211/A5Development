@@ -1,8 +1,15 @@
 CC=gcc
 CFLAGS=-c -Wall -Werror -g
 
+tests: unit_test01 unit_test02
+	./unit_test01
+	./unit_test02
+
 unit_test01: unit_test01.o main_mem.o
 	$(CC) -o unit_test01 unit_test01.o main_mem.o
+
+unit_test02: unit_test02.o main_mem.o
+	$(CC) -o unit_test02 unit_test02.o main_mem.o
 
 unit_test01.o: unit_test01.c main_mem.h
 	$(CC) $(CFLAGS) unit_test01.c

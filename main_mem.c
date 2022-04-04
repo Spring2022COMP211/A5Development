@@ -18,17 +18,21 @@ void freeMainMem(MainMem *mem) {
     }
 }
 
-// Returs word from MainMem at address.
+// Returns word from MainMem at address.
 // Address must be word aligned.
 
 MainMemResult readWord(MainMem *mem, uint32_t address, uint32_t *value) {
     return MM_UNIT_FAIL;
 }
 
+// Write value to word in MainMem at address.
+// Address must be word aligned.
 MainMemResult writeWord(MainMem *mem, uint32_t address, uint32_t value) {
     return MM_UNIT_FAIL;
 }
 
+// Returns number of words in MainMem
+// Calculated as 2^address_width / 4
 uint32_t mainMemWordCount(MainMem *mem) {
     return (1 << mem->address_width) / sizeof(uint32_t);
 }
